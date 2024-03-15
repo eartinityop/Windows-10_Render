@@ -21,10 +21,11 @@ WORKDIR /windows
 # Download Windows 11 ISO (Replace <URL_TO_WINDOWS11_ISO> with the actual URL)
 RUN wget -O Windows11.iso https://archive.org/download/21996.1.210529-1541.co-release-client-consumer-x-64-fre-en-us_20210619_0140/21996.1.210529-1541.co_release_CLIENT_CONSUMER_x64FRE_en-us.iso
 
-# Run QEMU to start Windows 11 VM
+# Run QEMU to start Windows 11 VM with VNC display
 CMD qemu-system-x86_64 \
     -m 4G \
     -cdrom /windows/Windows11.iso \
     -boot d \
     -vga virtio \
-    -display gtk
+    -vnc :0 \
+    -k en-us
