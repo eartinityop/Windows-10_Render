@@ -27,5 +27,4 @@ CMD qemu-system-x86_64 \
     -cdrom /windows/Windows11.iso \
     -boot d \
     -vga virtio \
-    -soundhw hda \
     -display gtk
