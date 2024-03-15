@@ -23,10 +23,9 @@ RUN wget -O Windows11.iso https://archive.org/download/21996.1.210529-1541.co-re
 
 # Run QEMU to start Windows 11 VM
 CMD qemu-system-x86_64 \
-    -m 8G \
+    -m 4G \
     -cdrom /windows/Windows11.iso \
     -boot d \
-    -enable-kvm \
     -vga virtio \
     -soundhw hda \
     -display gtk
